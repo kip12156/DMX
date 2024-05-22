@@ -1,0 +1,46 @@
+﻿<Page x:Class="DemoEx.InvoiceCreationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoEx"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InvoiceCreationPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <TextBlock  Grid.Column="0" Grid.Row="0">
+    <Hyperlink NavigateUri="MainMenuPage.xaml">
+        Назад
+    </Hyperlink>
+        </TextBlock>
+        <Label Grid.Column="1" Grid.Row="0" Content="Создание заявки"/>
+        <ScrollViewer Grid.Column="1" Grid.Row="1">
+            <StackPanel>
+                <Label Content="Введите ФИО/Наименование заказчика"/>
+                <TextBox x:Name="clientNameTextBox"/>
+                <Label Content="Введите Email заказчика"/>
+                <TextBox x:Name="clientEmailTextBox"/>
+                <Label Content="Выберите оборудование"/>
+                <ComboBox x:Name="deviceComboBox"/>
+                <Label Content="Введите серийный номер оборудования"/>
+                <TextBox x:Name="serialNumberTextBox"/>
+                <Label Content="Выберите тип неисправности"/>
+                <ComboBox x:Name="defectComboBox"/>
+                <Label Content="Введите описание неисправности"/>
+                <TextBox x:Name="defectDescriptionTextBox" Width="200" Height="90"/>
+                <Label Content="Выберите срок выполнения заявки"/>
+                <DatePicker Name="datePicker"/>
+                <Button Click="CreateInvoiceButtonClick" Content="добавить заявку"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
